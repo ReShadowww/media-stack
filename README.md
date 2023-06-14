@@ -37,7 +37,7 @@ chown 1000:1000 /downloads/movies /downloads/tvshows
 # If failed:
 docker stop $(docker ps -a -q)
 docker system prune -a
-docker volume prune -a
+docker volume rm $(docker volume ls -q)
 docker network prune
 
 rm -r /var/torrent-downloads
