@@ -86,11 +86,11 @@ services:
     profiles: ["qbt", "stack-2"]
     image: linuxserver/qbittorrent:4.5.2
     # Comment this if vpn is disabled
-    depends_on:
-      - vpn
+    # depends_on:
+      # - vpn
     networks:
       - mynetwork
-    network_mode: service:vpn # Comment this line if vpn is disabled
+    # network_mode: service:vpn # Comment this line if vpn is disabled
     environment:
       - PUID=1000
       - PGID=1000
@@ -101,10 +101,10 @@ services:
       - torrent-downloads:/downloads
 
     ## Uncomment below ports if VPN is disabled.
-    # ports:
-    #   - 5080:5080
-    #   - 6881:6881
-    #   - 6881:6881/udp
+    ports:
+      - 5080:5080
+      - 6881:6881
+      - 6881:6881/udp
     restart: "unless-stopped"
   radarr:
     profiles: ["base", "radarr", "stack-1", "stack-2"]
@@ -162,9 +162,9 @@ services:
     container_name: prowlarr
     image: linuxserver/prowlarr:1.4.1-develop
     # Comment this if vpn is disabled
-    depends_on:
-      - vpn
-    network_mode: service:vpn # Comment this line if vpn is disabled
+    # depends_on:
+      # - vpn
+    # network_mode: service:vpn # Comment this line if vpn is disabled
     networks:
       - mynetwork
     environment:
@@ -174,8 +174,8 @@ services:
     volumes:
       - prowlarr-config:/config
     ## Uncomment below ports if VPN is disabled.
-    # ports:
-    #   - 9696:9696
+    ports:
+      - 9696:9696
     restart: unless-stopped
 
   jellyfin:
@@ -198,19 +198,6 @@ services:
       - 7359:7359/udp
       - 8920:8920
     restart: unless-stopped
-  
-  # cleanmyarr:
-  #   depends_on:
-  #     - radarr
-  #     - sonarr
-  #   profiles: ["base", "cleanmyarr", "stack-2"]
-  #   image: linuxshots/cleanmyarr:0.4.1-beta
-  #   container_name: cleanmyarr
-  #   networks:
-  #     - mynetwork
-  #   volumes:
-  #     - cleanmyarr-config:/config
-  #   restart: unless-stopped
 
 volumes:
   torrent-downloads:
