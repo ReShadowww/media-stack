@@ -31,6 +31,13 @@ docker exec -it qbittorrent bash
 
 mkdir /downloads/movies /downloads/tvshows
 chown 1000:1000 /downloads/movies /downloads/tvshows
+
+
+# If failed:
+docker stop $(docker ps -a -q)
+docker system prune -a
+docker volume prune -a
+docker network prune
 ```
 
 
