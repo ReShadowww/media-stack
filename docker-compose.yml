@@ -57,7 +57,7 @@ services:
     restart: unless-stopped
 
   prowlarr:
-    profiles: ["prowlarr", "stack-2"]
+    profiles: ["prowlarr", "stack-1"]
     container_name: prowlarr
     image: linuxserver/prowlarr:1.4.1-develop
     networks:
