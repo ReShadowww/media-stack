@@ -2,7 +2,7 @@ version: "3.9"
 name: media-stack
 services:
   vpn:
-  ## Read https://github.com/qdm12/gluetun/wiki for details on configuring VPN for different service providers.
+    ## Read https://github.com/qdm12/gluetun/wiki for details on configuring VPN for different service providers.
     profiles: ["vpn", "stack-2"]
     container_name: vpn
     image: qmcgaw/gluetun:v3.33
@@ -17,13 +17,13 @@ services:
 
       ## SERVER_REGIONS is required for NordVPN and Surfshark VPN. Comment SERVER_COUNTRIES if SERVER_REGIONS is used.
       - SERVER_REGIONS=${SERVER_REGIONS:-Switzerland}
-    
+
       ## SERVER_COUNTRIES is required for ExpressVPN and ProtonVPN. Comment SERVER_REGIONS if SERVER_COUNTRIES is used.
       # - SERVER_COUNTRIES=${SERVER_COUNTRIES:-Netherlands}
       # - FREE_ONLY=on  # Valid with protonvpn only. on if using free service provided by protonvpn
 
       ## Enable below if VPN_SERVICE_PROVIDER=custom
-      # - VPN_TYPE=openvpn # or wireguard. 
+      # - VPN_TYPE=openvpn # or wireguard.
 
       ## If VPN_TYPE is openvpn
       # - OPENVPN_CUSTOM_CONFIG=/gluetun/custom.conf
@@ -38,7 +38,7 @@ services:
 
     ## Enable volume if custom VPN_SERVICE_PROVIDER is used
     # volumes:
-      # - /yourpath/yourconfig.conf:/gluetun/config.conf:ro
+    # - /yourpath/yourconfig.conf:/gluetun/config.conf:ro
 
     networks:
       - mynetwork
@@ -87,7 +87,7 @@ services:
     image: linuxserver/qbittorrent:4.5.2
     # Comment this if vpn is disabled
     # depends_on:
-      # - vpn
+    # - vpn
     networks:
       - mynetwork
     # network_mode: service:vpn # Comment this line if vpn is disabled
@@ -163,7 +163,7 @@ services:
     image: linuxserver/prowlarr:1.4.1-develop
     # Comment this if vpn is disabled
     # depends_on:
-      # - vpn
+    # - vpn
     # network_mode: service:vpn # Comment this line if vpn is disabled
     networks:
       - mynetwork
@@ -191,8 +191,8 @@ services:
     volumes:
       - jellyfin-config:/config
       - torrent-downloads:/data
-  # devices:
-   #  - /dev/videoN:/dev/videoN # Mount GPU device 
+    # devices:
+    #  - /dev/videoN:/dev/videoN # Mount GPU device
     ports:
       - 8096:8096
       - 7359:7359/udp
