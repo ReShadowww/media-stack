@@ -24,6 +24,7 @@ Specific tool which is not present in a stack can also be included using their p
 git clone https://github.com/ReShadowww/media-stack.git
 cd media-stack
 sudo mkdir /var/torrent-downloads
+docker network create mynetwork
 docker compose --profile stack-1 up -d
 
 docker exec -it qbittorrent bash
