@@ -4,8 +4,7 @@ services:
   ## Change password after install from UI --> Tools --> Options --> WebUI ##
   qbittorrent:
     container_name: qbittorrent
-    profiles: ["qbt", "stack-1"]
-    image: linuxserver/qbittorrent:4.5.2
+    image: linuxserver/qbittorrent:latest
     networks:
       - mynetwork
     environment:
@@ -23,9 +22,8 @@ services:
     restart: "unless-stopped"
 
   radarr:
-    profiles: ["base", "radarr", "stack-1", "stack-2"]
     container_name: radarr
-    image: linuxserver/radarr:4.4.4
+    image: linuxserver/radarr:latest
     networks:
       - mynetwork
     environment:
@@ -40,8 +38,7 @@ services:
     restart: "unless-stopped"
 
   sonarr:
-    profiles: ["base", "sonarr", "stack-1", "stack-2"]
-    image: linuxserver/sonarr:4.0.0-develop
+    image: linuxserver/sonarr:latest
     container_name: sonarr
     networks:
       - mynetwork
@@ -57,9 +54,8 @@ services:
     restart: unless-stopped
 
   prowlarr:
-    profiles: ["prowlarr", "stack-1"]
     container_name: prowlarr
-    image: linuxserver/prowlarr:1.4.1-develop
+    image: linuxserver/prowlarr:latest
     networks:
       - mynetwork
     environment:
@@ -72,27 +68,6 @@ services:
       - 9696:9696
     restart: unless-stopped
 
-  jellyfin:
-    profiles: ["base", "jelly", "stack-1", "stack-2"]
-    image: linuxserver/jellyfin:10.8.10
-    container_name: jellyfin
-    networks:
-      - mynetwork
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
-    volumes:
-      - jellyfin-config:/config
-      - torrent-downloads:/data
-    # devices:
-    #  - /dev/videoN:/dev/videoN # Mount GPU device
-    ports:
-      - 8096:8096
-      - 7359:7359/udp
-      - 8920:8920
-    restart: unless-stopped
-
 volumes:
   torrent-downloads:
     driver: local
@@ -103,7 +78,6 @@ volumes:
   radarr-config:
   sonarr-config:
   prowlarr-config:
-  jellyfin-config:
   qbittorrent-config:
 
 networks:
