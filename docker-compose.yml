@@ -200,6 +200,11 @@ services:
 
 volumes:
   torrent-downloads:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/reshadow/transmission_folder
   radarr-config:
   sonarr-config:
   jackett-config:
