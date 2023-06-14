@@ -21,9 +21,10 @@ Any one of them can be deployed using `--profile` option with docker compose com
 Specific tool which is not present in a stack can also be included using their profile name in `--profile`. For example, to include prowlarr with stack-1 we can use `--profile stack-1 --profile prowlarr` with docker compose command.
 
 ```
+# TL;DR
 git clone https://github.com/ReShadowww/media-stack.git
 cd media-stack
-sudo mkdir /var/torrent-downloads
+mkdir /var/torrent-downloads
 docker network create mynetwork
 docker compose --profile stack-1 up -d
 
@@ -38,6 +39,8 @@ docker stop $(docker ps -a -q)
 docker system prune -a
 docker volume prune -a
 docker network prune
+
+rm -r /var/torrent-downloads
 ```
 
 
