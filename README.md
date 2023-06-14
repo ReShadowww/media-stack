@@ -21,6 +21,19 @@ Any one of them can be deployed using `--profile` option with docker compose com
 Specific tool which is not present in a stack can also be included using their profile name in `--profile`. For example, to include prowlarr with stack-1 we can use `--profile stack-1 --profile prowlarr` with docker compose command.
 
 ```
+git clone https://github.com/ReShadowww/media-stack.git
+cd media-stack
+sudo mkdir /var/torrent-downloads
+docker compose --profile stack-1 up -d
+
+docker exec -it qbittorrent bash
+
+mkdir /downloads/movies /downloads/tvshows
+chown 1000:1000 /downloads/movies /downloads/tvshows
+```
+
+
+```
 docker network create mynetwork
 
 # Install Jellyfin, Radarr, Sonarr, Jackett and Transmission stack
