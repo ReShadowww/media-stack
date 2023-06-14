@@ -83,7 +83,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/reshadow/transmission_folder
+      device: /var/torrent-downloads
   radarr-config:
   sonarr-config:
   prowlarr-config:
