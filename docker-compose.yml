@@ -1,5 +1,4 @@
-version: "3.3"
-name: media-stack
+version: "3.9"
 services:
   vpn:
     ## Read https://github.com/qdm12/gluetun/wiki for details on configuring VPN for different service providers.
