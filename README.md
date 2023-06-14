@@ -26,7 +26,7 @@ git clone https://github.com/ReShadowww/media-stack.git
 cd media-stack
 mkdir /var/torrent-downloads
 docker network create mynetwork
-docker compose --profile stack-1 up -d
+docker compose up -d
 
 docker exec -it qbittorrent bash
 
