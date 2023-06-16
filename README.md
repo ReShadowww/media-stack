@@ -45,12 +45,11 @@ chown 1000:1000 /downloads/movies /downloads/tvshows
 ## Add a movie
 
 - Movies --> Search for a movie --> Add Root folder (/downloads) --> Quality profile --> Add movie
-- Go to transmission (http://localhost:9091) and see if movie is getting downloaded.
+- Go to qbittorrent (http://localhost:5080) and see if movie is getting downloaded.
 
 ## Configure Prowlarr
 
 - Open Prowlarr at http://localhost:9696
-- Settings --> General --> Authentications --> Select AUthentication and add username and password
 - Add Indexers, Indexers --> Add Indexer --> Search for indexer --> Choose base URL --> Test and Save
 - Add application, Settings --> Apps --> Add application --> Choose Sonarr or Radarr or any apps to link --> Prowlarr server (http://localhost:9696) --> Radarr server (http://localhost:7878) --> API Key --> Test and Save
 - This will add indexers in respective apps automatically.
