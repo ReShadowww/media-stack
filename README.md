@@ -1,6 +1,11 @@
 # media-stack
 
-A stack of self-hosted media managers and streamer along with VPN. 
+A stack of self-hosted media managers:
+- Bazarr
+- Prowlarr
+- Sonarr
+- Radarr
+- qbittorrent
 
 ## Requirements
 
