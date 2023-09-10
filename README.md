@@ -32,8 +32,8 @@ docker compose up -d
 ```
 docker exec -it qbittorrent bash
 
-mkdir /downloads/movies /downloads/tvshows
-chown 1000:1000 /downloads/movies /downloads/tvshows
+mkdir /downloads/media/movies /downloads/media/tvshows
+chown 1000:1000 /downloads/media/movies /downloads/media/tvshows
 ```
 
 ## Configure Radarr and Sonarr
