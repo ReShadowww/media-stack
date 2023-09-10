@@ -77,7 +77,7 @@ services:
     ports:
       - 5055:5055
     volumes:
-      - ./jellyseerr/config:/config
+      - ./jellyseerr/config:/app/config
     restart: unless-stopped
 
   jellyfin:
