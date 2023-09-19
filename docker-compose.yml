@@ -103,6 +103,8 @@ services:
       - TZ=Europe/Vilnius
     volumes:
       - ./bazarr/config:/config
+      - /home/reshadow/torrents/media:/movies #optional
+      - /home/reshadow/torrents/media:/tv #optional
     ports:
       - 6767:6767
     restart: unless-stopped
