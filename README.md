@@ -1,13 +1,13 @@
 # media-stack
 
 A stack of self-hosted media managers:
-- qbittorrent
-- Radarr
-- Sonarr
-- Prowlarr
-- Jellyseerr
-- Jellyfin
-- Bazarr
+- qbittorrent -> http://localhost:5080
+- Radarr -> http://localhost:7878
+- Sonarr -> http://localhost:8989
+- Prowlarr -> http://localhost:9696
+- Jellyseerr -> http://localhost:5055
+- Jellyfin -> http://localhost:8096
+- Bazarr -> http://localhost:6767
 
 ## Requirements
 
