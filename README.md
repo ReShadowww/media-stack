@@ -1,11 +1,13 @@
 # media-stack
 
 A stack of self-hosted media managers:
-- Bazarr
-- Prowlarr
-- Sonarr
-- Radarr
 - qbittorrent
+- Radarr
+- Sonarr
+- Prowlarr
+- Jellyseerr
+- Jellyfin
+- Bazarr
 
 ## Requirements
 
