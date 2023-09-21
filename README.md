@@ -20,7 +20,6 @@ A stack of self-hosted media managers:
 ```
 git clone https://github.com/ReShadowww/media-stack.git
 cd media-stack
-mkdir /var/torrent-downloads
 docker network create media-stack-network
 docker compose up -d
 ```
