@@ -57,10 +57,8 @@ chown 1000:1000 /downloads/media/movies /downloads/media/tvshows
 
 ## CAUTION Deletes EVERYTHING from docker, used only for test reseting
 ```
-docker stop $(docker ps -a -q)
-docker system prune -a
-docker volume rm $(docker volume ls -q)
-docker network prune
-
-rm -r /var/torrent-downloads
+sudo docker stop $(sudo docker ps -a -q)
+sudo docker system prune -a
+sudo docker volume rm $(sudo docker volume ls -q)
+sudo docker network prune
 ```
