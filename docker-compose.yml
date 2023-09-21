@@ -39,8 +39,8 @@ services:
     restart: "unless-stopped"
 
   sonarr:
-    image: linuxserver/sonarr:latest
     container_name: sonarr
+    image: linuxserver/sonarr:latest
     networks:
       - media-stack-network
     environment:
@@ -71,8 +71,10 @@ services:
     restart: unless-stopped
 
   jellyseerr:
-    image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
+    image: fallenbagel/jellyseerr:latest
+    networks:
+      - media-stack-network
     environment:
       - LOG_LEVEL=debug
       - TZ=Europe/Vilnius
@@ -83,8 +85,10 @@ services:
     restart: unless-stopped
 
   jellyfin:
-    image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
+    image: lscr.io/linuxserver/jellyfin:latest
+    networks:
+      - media-stack-network
     environment:
       - PUID=1000
       - PGID=1000
@@ -103,6 +107,8 @@ services:
   bazarr:
     container_name: bazarr
     image: lscr.io/linuxserver/bazarr:latest
+    networks:
+      - media-stack-network
     environment:
       - PUID=1000
       - PGID=1000
