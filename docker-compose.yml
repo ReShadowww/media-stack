@@ -35,7 +35,7 @@ services:
     volumes:
       - /home/reshadow/my-media-stack/configs/radarr:/config
       - /home/reshadow/my-media-stack/torrent-downloads:/downloads
-      - /home/reshadow/my-media-stack/movies:/movies
+      - /home/reshadow/my-media-stack/torrent-downloads/movies:/movies
     restart: "unless-stopped"
 
   sonarr:
@@ -50,7 +50,7 @@ services:
     volumes:
       - /home/reshadow/my-media-stack/configs/sonarr:/config
       - /home/reshadow/my-media-stack/torrent-downloads:/downloads
-      - /home/reshadow/my-media-stack/tv-series:/tv
+      - /home/reshadow/my-media-stack/torrent-downloads/tv-series:/tv
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -91,8 +91,8 @@ services:
       - TZ=Europe/Vilnius
     volumes:
       - /home/reshadow/my-media-stack/configs/jellyfin:/config
-      - /home/reshadow/my-media-stack/movies:/data/movies
-      - /home/reshadow/my-media-stack/tv-series:/data/tvshows
+      - /home/reshadow/my-media-stack/torrent-downloads/movies:/data/movies
+      - /home/reshadow/my-media-stack/torrent-downloads/tv-series:/data/tvshows
     ports:
       - 8096:8096
       - 8920:8920 #optional
@@ -109,8 +109,8 @@ services:
       - TZ=Europe/Vilnius
     volumes:
       - /home/reshadow/my-media-stack/configs/bazarr:/config
-      - /home/reshadow/my-media-stack/movies:/movies #optional
-      - /home/reshadow/my-media-stack/tv-series:/tv #optional
+      - /home/reshadow/my-media-stack/torrent-downloads/movies:/movies #optional
+      - /home/reshadow/my-media-stack/torrent-downloads/tv-series:/tv #optional
     ports:
       - 6767:6767
     restart: unless-stopped
