@@ -48,8 +48,7 @@ chown 1000:1000 /downloads/movies /downloads/tv-series
 - Open Radarr at http://localhost:7878 or Sonarr at http://localhost:8989/
 - Settings --> Media Management --> Check mark "Movies deleted from disk are automatically unmonitored in Radarr" under File management section --> Save
 - Settings --> Download clients --> qbittorrent --> Add Host (qbittorrent) and port (5080) --> Username and password if added --> Test --> Save
-
--Host ip is:
+- Host ip is:
 ```
 ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+'
 ```
