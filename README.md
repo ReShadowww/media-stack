@@ -31,10 +31,9 @@ sudo docker compose up -d
 - Run below commands
 
 ```
-docker exec -it qbittorrent bash
+sudo docker exec -it qbittorrent bash
 
-mkdir /downloads/media/movies /downloads/media/tvshows
-chown 1000:1000 /downloads/media/movies /downloads/media/tvshows
+chown 1000:1000 /downloads/movies /downloads/tv-series
 ```
 
 ## Configure Radarr and Sonarr
