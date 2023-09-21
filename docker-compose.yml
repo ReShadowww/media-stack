@@ -6,7 +6,7 @@ services:
     container_name: qbittorrent
     image: linuxserver/qbittorrent:latest
     networks:
-      - mynetwork
+      - media-stack-network
     environment:
       - PUID=1000
       - PGID=1000
@@ -25,7 +25,7 @@ services:
     container_name: radarr
     image: linuxserver/radarr:latest
     networks:
-      - mynetwork
+      - media-stack-network
     environment:
       - PUID=1000
       - PGID=1000
@@ -42,7 +42,7 @@ services:
     image: linuxserver/sonarr:latest
     container_name: sonarr
     networks:
-      - mynetwork
+      - media-stack-network
     environment:
       - PUID=1000
       - PGID=1000
@@ -59,7 +59,7 @@ services:
     container_name: prowlarr
     image: linuxserver/prowlarr:latest
     networks:
-      - mynetwork
+      - media-stack-network
     environment:
       - PUID=1000
       - PGID=1000
